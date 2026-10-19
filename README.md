@@ -10,7 +10,7 @@ An independent, hands-on learning guide for students preparing to work on Python
 
 - **[Learning path](docs/learning-path.md)** — See the complete sequence, expected skills and how to choose your next chapter.
 - **[Chapter index](modules/README.md)** — Jump to any chapter and move between them.
-- **Getting started** — A setup guide will be added in a future update.
+- **[Getting started](docs/getting-started.md)** — Install Python, run your first script and learn how to use this guide.
 
 ## How to learn with this guide
 

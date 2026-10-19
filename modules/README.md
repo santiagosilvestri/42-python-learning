@@ -1,6 +1,6 @@
 # Chapter Index
 
-[← Home](../README.md) · [Full learning path](../docs/learning-path.md)
+[← Home](../README.md) · [Getting started](../docs/getting-started.md) · [Full learning path](../docs/learning-path.md)
 
 Pick a chapter to see its goals, terminology and a pair of questions to think through before the lessons are released.
 

@@ -1,6 +1,8 @@
 # Learning Path
 
-[← Back to the repository](../README.md) · [Browse chapter index](../modules/README.md)
+[← Back to the repository](../README.md) · [Getting started](getting-started.md) · [Browse chapter index](../modules/README.md)
+
+> **New to Python?** Start with [Getting Started](getting-started.md) to prepare your tools and run a small example.
 
 ## Learn the ideas before building the projects
 
