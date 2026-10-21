@@ -4,7 +4,7 @@
 
 An independent, hands-on learning guide for students preparing to work on Python projects at 42. Learn the concepts, experiment with small examples, and build the problem-solving skills to tackle projects on your own.
 
-> **Work in progress:** This guide is being built in public, one useful update at a time. Chapter 00 now includes its first lesson; other chapters remain outlines.
+> **Work in progress:** This guide is being built in public, one useful update at a time. Chapter 00 now includes a lesson, independent practice and optional reference code; other chapters remain outlines.
 
 ## Start here
 
@@ -24,7 +24,7 @@ An independent, hands-on learning guide for students preparing to work on Python
 
 | Chapter | Focus | Status |
 | :--- | :--- | :--- |
-| [00 — Python Fundamentals](modules/00-fundamentals/README.md) | Variables, types, control flow, functions and recursion | In progress |
+| [00 — Python Fundamentals](modules/00-fundamentals/README.md) | Variables, types, control flow, functions and recursion | Ready |
 | [01 — Object-Oriented Programming](modules/01-oop/README.md) | Classes, objects, state, methods and inheritance | Outline |
 | [02 — Error Handling](modules/02-error-handling/README.md) | Exceptions, recovery and predictable failures | Outline |
 | [03 — Data Structures](modules/03-data-structures/README.md) | Collections, comprehensions, iteration and generators | Outline |

@@ -1,6 +1,6 @@
 # 00 — Python Fundamentals
 
-> **Status: In progress.** The core lesson and examples are available. Original practice challenges will arrive in the next update.
+> **Status: Ready.** Learn the fundamentals, solve original challenges, and optionally explore reference code after practicing.
 
 [← Chapter index](../README.md) · [Learning path](../../docs/learning-path.md) · [Getting started](../../docs/getting-started.md)
 
@@ -186,11 +186,86 @@ Before running it again, **predict** what will happen if you change `days` to `2
 | Using `print()` instead of `return` | Printing doesn't pass a result back to the caller. |
 | Writing recursion without a base case | Calls continue until Python raises an error. |
 
-## Before moving on
+## Before you practice
 
 Make sure you can explain the difference between `=`, `==`, and `return`; trace a short `if` statement and a loop; and identify the base case in `countdown()`. **You do not need to memorize everything.** You should be able to run the examples and explain what they do.
 
-**Next update:** A few original practice challenges and a short knowledge check. No ready-made project solutions are included here.
+## 8. Practice: build it yourself
+
+**Do these before opening the reference code.** The tasks below are original warm-ups rather than project instructions. Write each one in a new `.py` file, test it with several values, and explain your choices.
+
+| Level | Challenge | Requirements and example |
+| :--- | :--- | :--- |
+| 1 · Warm-up | **Temperature converter** | Write `to_fahrenheit(celsius: float) -> float`. Formula: `celsius * 9 / 5 + 32`. Check `0 → 32` and `100 → 212`. |
+| 2 · Conditions | **Score category** | Write `score_category(score: int) -> str`: return `"excellent"` for 80–100, `"good"` for 50–79, and `"keep practicing"` for 0–49. Decide how to treat values outside 0–100. |
+| 3 · Loops | **Even-number total** | Write `sum_evens(limit: int) -> int` that adds even numbers from 1 through `limit`. Check `6 → 12` and `1 → 0`. |
+| 4 · Recursion | **Sum from one to n** | Write `sum_to(n: int) -> int` recursively, with a base case for `0`. Check `sum_to(4) → 10`. Start with non-negative inputs. |
+| 5 · Mini-project | **Weekly study tracker** | Ask for minutes studied over 3 days, calculate the total and average, then display whether the total reaches 120 minutes. Separate the calculation from the printing. |
+
+**Tips:** Start with a function signature, try ordinary values and boundaries, and compare what you *predicted* with what Python actually does. If your code fails, read the error before changing anything.
+
+## 9. Knowledge check
+
+Try answering without running code first:
+
+1. Why does `input()` need conversion when you want a number?
+2. What is the difference between `print(value)` and `return value`?
+3. Which numbers are produced by `range(2, 7)`?
+4. Do Python type annotations prevent wrong argument types at runtime automatically?
+5. What happens if a recursive function never reaches its base case?
+
+**Predict the output:**
+
+```python
+points = 0
+for number in range(1, 5):
+    if number % 2 == 0:
+        points += number
+print(points)
+```
+
+**Spot the bug:** Why does this loop never finish when `limit` is positive? How would you fix it?
+
+```python
+def show_numbers(limit: int) -> None:
+    number = 0
+    while number < limit:
+        print(number)
+```
+
+## 10. Optional: reference implementations
+
+<details>
+<summary>Show reference code links (open only after trying the challenges)</summary>
+
+These are personal, small programs for inspecting basic syntax. **They are not solutions to the five original challenges above** and are not a substitute for implementing your own exercises. Their function bodies are preserved from the author's examples; an `if __name__ == "__main__":` entry point was added to make each file runnable directly.
+
+| Concept | Example |
+| :--- | :--- |
+| Printing | [`ft_hello_garden.py`](reference/ft_hello_garden.py) |
+| Text input | [`ft_garden_name.py`](reference/ft_garden_name.py) |
+| Numeric input and multiplication | [`ft_plot_area.py`](reference/ft_plot_area.py) |
+| Adding values | [`ft_harvest_total.py`](reference/ft_harvest_total.py) |
+| Comparisons and conditions | [`ft_plant_age.py`](reference/ft_plant_age.py) |
+| Conditional reminders | [`ft_water_reminder.py`](reference/ft_water_reminder.py) |
+| Iteration | [`ft_count_harvest_iterative.py`](reference/ft_count_harvest_iterative.py) |
+| Recursion | [`ft_count_harvest_recursive.py`](reference/ft_count_harvest_recursive.py) |
+| Parameters and branching | [`ft_seed_inventory.py`](reference/ft_seed_inventory.py) |
+
+From the repository root, run for example:
+
+```bash
+python3 modules/00-fundamentals/reference/ft_hello_garden.py
+python3 modules/00-fundamentals/reference/ft_seed_inventory.py
+```
+
+Other examples ask for input in the terminal. Try changing an argument or entering a different value, then explain the result. Numeric examples assume valid numeric input; handling invalid input is a topic for [Chapter 02](../02-error-handling/README.md). The recursive example is intended for small input values.
+
+</details>
+
+### Ready for the next chapter?
+
+You should now be able to write a short function, explain its return value, trace a loop, use an `if` statement, and identify a recursive base case. If any of those are still unclear, revisit the examples and attempt one challenge again before moving on.
 
 ---
 

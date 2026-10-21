@@ -14,7 +14,7 @@ A good routine for each chapter is to **read → predict → run → modify → 
 
 | Chapter | Main question | Recommended foundation | Status |
 | :--- | :--- | :--- | :--- |
-| [00 — Python Fundamentals](../modules/00-fundamentals/README.md) | How do I express an algorithm in Python? | Basic computer use | In progress |
+| [00 — Python Fundamentals](../modules/00-fundamentals/README.md) | How do I express an algorithm in Python? | Basic computer use | Ready |
 | [01 — Object-Oriented Programming](../modules/01-oop/README.md) | How can objects represent state and behavior? | 00 | Outline |
 | [02 — Error Handling](../modules/02-error-handling/README.md) | How do I make failures predictable? | 00 | Outline |
 | [03 — Data Structures](../modules/03-data-structures/README.md) | Which collection should I use, and why? | 00 | Outline |
