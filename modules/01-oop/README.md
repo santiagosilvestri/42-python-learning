@@ -1,10 +1,10 @@
 # 01 — Object-Oriented Programming
 
-> **Status: In progress.** The concepts and runnable examples are available. Original practice challenges and optional reference code will follow in the next update.
+> **Status: Ready.** This chapter includes concepts, runnable examples, original practice challenges, and optional reference implementations. Start with the practice before opening the reference code.
 
 [← Chapter index](../README.md) · [Learning path](../../docs/learning-path.md) · [Getting started](../../docs/getting-started.md) · [← 00 — Python Fundamentals](../00-fundamentals/README.md)
 
-**Goal:** Learn how to organize data and behavior into objects, keep their state consistent, and reuse behavior without copying code. Allow about **25–35 minutes** to read and experiment with this lesson.
+**Goal:** Learn how to organize data and behavior into objects, keep their state consistent, and reuse behavior without copying code. Allow about **25–35 minutes** for the lesson, plus additional time for practice.
 
 Before starting, make sure you understand [functions, loops, and types](../00-fundamentals/README.md).
 
@@ -249,7 +249,101 @@ b.increase()
 print(a.value, b.value)
 ```
 
-**Next update:** original OOP exercises, a debugging challenge, and optional code examples to inspect after you practice independently.
+## 9. Practice: build it yourself
+
+**Try these original challenges before reading the reference code.** Use a separate file for each challenge and run your own tests. There is more than one valid design.
+
+| Level | Challenge | Your goal |
+| :--- | :--- | :--- |
+| 1 · Instances | **Habit tracker** | Create a `Habit` class with a name and a count. Add a `complete()` method that increases the count. Create two independent habits. |
+| 2 · Encapsulation | **Digital wallet** | Create a `Wallet` with a balance. Add `deposit(amount)` and `withdraw(amount)` methods that reject non-positive amounts or insufficient funds without changing the balance. |
+| 3 · Inheritance | **Notifications** | Create a base `Notification` class with a `format()` method. Add `EmailNotification` and `PushNotification` subclasses that customize the message using method overriding and `super()`. |
+| 4 · Composition | **Reading list** | Create a `Book` class and a `ReadingList` that stores book objects. Add books and count how many are marked as finished. Keep each reading list independent. |
+| 5 · Advanced OOP | **Training report** | Build a `TrainingReport` with a nested `Statistics` class that counts logged sessions. Add a `@classmethod` alternative constructor, a `@staticmethod` to classify session lengths, and a standalone function that displays a report. |
+
+**Hints:** Start with `__init__`, decide what each object owns, and write methods for meaningful actions. If you use inheritance, explain why a subclass *is a* more specific version of its parent; if you use composition, identify the *has-a* relationship.
+
+### Debugging challenge
+
+What is wrong with this program? Predict the output before running it. Then fix the class so each object maintains its own items.
+
+```python
+class Playlist:
+    songs: list[str] = []
+
+    def add_song(self, title: str) -> None:
+        self.songs.append(title)
+
+
+morning = Playlist()
+evening = Playlist()
+morning.add_song("Sunrise")
+print(evening.songs)
+```
+
+### Predict and explain
+
+Explain why the following displays a different value for each object, even though both objects use the same method definition.
+
+```python
+class Timer:
+    def __init__(self, minutes: int) -> None:
+        self.minutes = minutes
+
+    def extend(self, extra: int) -> None:
+        self.minutes += extra
+
+
+first = Timer(10)
+second = Timer(20)
+first.extend(5)
+print(first.minutes, second.minutes)
+```
+
+## 10. Knowledge check
+
+Without reopening the explanations, see whether you can:
+
+1. Explain `self` and the difference between a class and an instance.
+2. Describe when `__init__` runs and why objects should initialize their own state.
+3. Explain why an underscore is a convention rather than access protection.
+4. Distinguish inheritance, overriding, polymorphism, and composition.
+5. Explain `@classmethod`, `@staticmethod`, and a standalone function.
+6. Describe when a nested class helps and what it **does not** automatically inherit from its outer class.
+
+If you can complete challenges 1–4 and explain the ideas in question 5, you have a useful foundation. Try challenge 5 as an additional stretch exercise; it is not required to begin the next chapter.
+
+## 11. Optional: reference implementations
+
+<details>
+<summary>Show code examples (open only after independent practice)</summary>
+
+The following are the author's small programs for exploring OOP concepts. **They are not solutions to the five challenges above**. Review one concept at a time, predict what the program does, then run and modify it. Keep your own project solutions independent.
+
+| Focus | Code |
+| :--- | :--- |
+| Simple variables and program entry point | [`ft_garden_intro.py`](reference/ft_garden_intro.py) |
+| Classes and instances | [`ft_garden_data.py`](reference/ft_garden_data.py) |
+| Methods and changing state | [`ft_plant_growth.py`](reference/ft_plant_growth.py) |
+| Object initialization with `__init__` | [`ft_plant_factory.py`](reference/ft_plant_factory.py) |
+| Encapsulation and validation | [`ft_garden_security.py`](reference/ft_garden_security.py) |
+| Inheritance and method overriding | [`ft_plant_types.py`](reference/ft_plant_types.py) |
+| Nested classes, method types, and polymorphism | [`ft_garden_analytics.py`](reference/ft_garden_analytics.py) |
+
+For example, from the repository root:
+
+```bash
+python3 modules/01-oop/reference/ft_plant_factory.py
+python3 modules/01-oop/reference/ft_plant_types.py
+```
+
+These samples demonstrate concepts rather than production-grade domain validation. Type hints document expected values but are not enforced automatically at runtime.
+
+</details>
+
+### Ready for the next chapter?
+
+You should be able to create and initialize objects, update instance state through methods, explain how inheritance and `super()` work, and choose between composition and inheritance for a small design. Practice explaining your choices before moving forward.
 
 ---
 
