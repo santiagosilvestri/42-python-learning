@@ -1,10 +1,10 @@
 # 02 — Error Handling
 
-> **Status: In progress.** The lesson and examples are available. Original practice challenges and optional reference code will be added in the next update.
+> **Status: Ready.** Learn the concepts, practice independently, then explore the optional reference programs.
 
 [← Chapter index](../README.md) · [Learning path](../../docs/learning-path.md) · [Getting started](../../docs/getting-started.md) · [← 01 — Object-Oriented Programming](../01-oop/README.md)
 
-**Goal:** Learn to handle expected failures without hiding programming mistakes. Allow about **20–25 minutes** to read the lesson and try the examples.
+**Goal:** Learn to handle expected failures without hiding programming mistakes. Allow about **20–25 minutes** for the lesson and extra time to solve the practice challenges.
 
 Before starting, review [functions and basic types](../00-fundamentals/README.md). You will also use [classes and inheritance](../01-oop/README.md) to define your own exceptions.
 
@@ -225,18 +225,48 @@ Also avoid wrapping an entire program in one large `try` block. Smaller blocks m
 | Assuming `finally` runs only on errors | Remember that it also runs after successful execution and before an early return. |
 | Returning from `finally` | Avoid overriding returns or suppressing exceptions. |
 
-## Check your understanding
+## 8. Practice: build it yourself
 
-Try answering these questions before running the examples again:
+**Try these original challenges before opening the reference code.** Create your own `.py` files, test success and failure cases, and explain why you catch each exception. The reference programs below demonstrate related concepts, but do **not** solve these challenges.
 
-1. What happens when `int("hello")` is executed without a handler?
-2. Why might two separate `except` blocks be clearer than one broad handler?
-3. When should a function raise `ValueError` instead of returning a value?
-4. What is the difference between `else` and `finally`?
-5. Why can a parent exception handler catch a custom child exception?
-6. What makes an error message useful to someone debugging a program?
+| Level | Challenge | Your goal |
+| :--- | :--- | :--- |
+| 1 · Conversion | **Reading minutes** | Write `parse_minutes(text: str) -> int`. Convert a string to an integer, reject negative values with `ValueError`, and display a friendly message when parsing fails. Try `"30"`, `"unknown"`, and `"-5"`. |
+| 2 · Multiple errors | **Split a bill** | Write `split_bill(total: str, guests: str) -> float`. Convert both inputs and divide the amount. Handle invalid numbers and zero guests with different messages, and continue processing the next pair. |
+| 3 · Custom errors | **Ticket checkout** | Create `TicketError` and a subclass `SoldOutError`. Write a function that raises `SoldOutError` when a request exceeds the remaining tickets. Show that a handler for `TicketError` can catch the child exception. |
+| 4 · Cleanup | **Study session** | Write `run_session(duration: str) -> None` that prints an opening message, converts the duration to a positive integer, and always prints a closing message using `finally`. Try valid and invalid input. |
+| 5 · Mini-project | **Workshop registration** | Combine conversion, validation, a custom exception and `finally`. Process several seat requests independently, so one invalid registration does not stop later ones. Explain which errors your program catches and which ones it deliberately leaves visible. |
 
-**Predict the output:**
+**Tips:** Catch errors where you know how to recover. Keep `try` blocks small. Test boundary values, not just one valid value. A custom exception is useful when the caller needs to distinguish a domain-specific failure from a general input error.
+
+### Debugging challenge
+
+This function catches invalid integers but still fails for one important input. Which input is it? Fix the code by handling that error explicitly without hiding unrelated programming mistakes.
+
+```python
+def safe_average(total: str, count: str) -> float:
+    try:
+        return int(total) / int(count)
+    except ValueError:
+        return 0.0
+
+
+print(safe_average("12", "0"))
+```
+
+## 9. Knowledge check
+
+Explain these ideas before consulting the programs below:
+
+1. What happens when `int("hello")` runs without an exception handler?
+2. Why is catching `ValueError` different from catching `ZeroDivisionError`?
+3. When should a function use `raise` rather than return a normal result?
+4. When do `else` and `finally` run in a `try` statement?
+5. How can a handler for a parent exception catch its subclass?
+6. Why does `except Exception: pass` often make debugging harder?
+7. If you put `return` inside `try`, does `finally` still execute?
+
+**Predict the output before running this code:**
 
 ```python
 def read_level(text: str) -> None:
@@ -254,7 +284,35 @@ read_level("3")
 read_level("high")
 ```
 
-**Next update:** You'll put these concepts into practice with original challenges and optional reference programs. Until then, try changing the inputs in the examples and predict which blocks will run.
+## 10. Optional: reference implementations
+
+<details>
+<summary>Show reference programs (open after independent practice)</summary>
+
+These are the author's small programs illustrating exception handling. **They are not solutions to the five original challenges above.** Read one at a time, predict which errors will occur, run the program, and change an input to see how the handler responds.
+
+| Concept | Example |
+| :--- | :--- |
+| Converting input and catching `ValueError` | [`ft_first_exception.py`](reference/ft_first_exception.py) |
+| Rejecting out-of-range input with `raise` | [`ft_raise_exception.py`](reference/ft_raise_exception.py) |
+| Handling several built-in exception types | [`ft_different_errors.py`](reference/ft_different_errors.py) |
+| Creating and catching an exception hierarchy | [`ft_custom_errors.py`](reference/ft_custom_errors.py) |
+| Running cleanup with `finally`, including early `return` | [`ft_finally_block.py`](reference/ft_finally_block.py) |
+
+From the repository root, run for example:
+
+```bash
+python3 modules/02-error-handling/reference/ft_first_exception.py
+python3 modules/02-error-handling/reference/ft_finally_block.py
+```
+
+Some examples **intentionally trigger exceptions** so that their handlers can demonstrate recovery. In `ft_different_errors.py`, an invalid string/integer addition is deliberate; a static type checker can flag that demonstration even though the script catches the resulting `TypeError` at runtime.
+
+</details>
+
+### Ready for the next chapter?
+
+You should be able to convert input safely, recognize different exception types, choose when to raise or catch an error, define a custom exception, and explain why cleanup belongs in `finally`. If you can independently solve challenges 1–4 and reason about challenge 5, you have a useful foundation for handling failures in larger projects.
 
 ---
 
