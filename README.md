@@ -4,7 +4,7 @@
 
 An independent, hands-on learning guide for students preparing to work on Python projects at 42. Learn the concepts, experiment with small examples, and build the problem-solving skills to tackle projects on your own.
 
-> **Work in progress:** This guide is being built in public, one useful update at a time. Chapters 00–02 are ready; the remaining chapters are outlines.
+> **Work in progress:** This guide is being built in public, one useful update at a time. Chapters 00–02 are ready; Chapter 03 is in progress, and the remaining chapters are outlines.
 
 ## Start here
 
@@ -27,7 +27,7 @@ An independent, hands-on learning guide for students preparing to work on Python
 | [00 — Python Fundamentals](modules/00-fundamentals/README.md) | Variables, types, control flow, functions and recursion | Ready |
 | [01 — Object-Oriented Programming](modules/01-oop/README.md) | Classes, objects, state, methods and inheritance | Ready |
 | [02 — Error Handling](modules/02-error-handling/README.md) | Exceptions, recovery and predictable failures | Ready |
-| [03 — Data Structures](modules/03-data-structures/README.md) | Collections, comprehensions, iteration and generators | Outline |
+| [03 — Data Structures](modules/03-data-structures/README.md) | Collections, comprehensions, iteration and generators | In progress |
 | [04 — Files and I/O](modules/04-files-io/README.md) | File access, text streams, resources and context managers | Outline |
 | [05 — Advanced Object-Oriented Python](modules/05-advanced-oop/README.md) | Abstraction, polymorphism, interfaces and protocols | Outline |
 | [06 — Modules and Packages](modules/06-modules-packages/README.md) | Imports, namespaces and reusable project structure | Outline |
