@@ -265,7 +265,87 @@ print(len(set(numbers)))
 print([value * 2 for value in numbers if value > 2])
 ```
 
-**Next update:** We will add original practice challenges and optional reference programs. You do not need those solutions to try modifying the examples above.
+## 9. Practice: build it yourself
+
+Try these **five original challenges** without opening the reference programs. You can write each solution in a separate file on your computer. Start small, test different inputs, and explain why you chose each collection.
+
+| Level | Challenge | Your goal |
+| :--- | :--- | :--- |
+| 1 · Lists | **Playlist explorer** | Read song titles from the command line. Print the number of titles, the first and last title when present, and a numbered playlist. Test zero, one, and several titles, including titles containing spaces. |
+| 2 · Tuples | **Delivery route** | Store a sequence of two-dimensional checkpoints as `(x, y)` tuples. Unpack each checkpoint and calculate the total *Manhattan distance* (the sum of absolute changes in `x` and `y`) between consecutive checkpoints. |
+| 3 · Sets | **Workshop groups** | Given the attendees of two workshops, report who joined either workshop, who joined both, and who joined only the first one. Explain why duplicates should not affect your results. |
+| 4 · Dictionaries | **Library loans** | Start with a list of borrowed book genres. Build a dictionary counting how often each genre appears, then print a summary ordered alphabetically. Handle an empty reading history. |
+| 5 · Mini-project | **Study activity report** | Store `(topic, minutes)` records, build totals by topic, and use a comprehension to select topics with at least 30 minutes. Write a generator that yields each selected topic one at a time. |
+
+**Practice tip:** Try at least two edge cases for each challenge. Empty collections, repeated values, and a single element often reveal bugs earlier than large examples.
+
+### Debugging challenge
+
+This code is intended to collect a new score and print the updated list. Why does it fail, and how would you fix it without replacing the original list?
+
+```python
+scores = [12, 18]
+scores = scores.append(24)
+print(scores[-1])
+```
+
+### Predict the output
+
+What will be printed? Explain the role of `set()`, unpacking, and dictionary lookup.
+
+```python
+records = [("A", 2), ("B", 3), ("A", 4)]
+totals: dict[str, int] = {}
+for name, points in records:
+    totals[name] = totals.get(name, 0) + points
+print(len(set(name for name, _ in records)))
+print(totals["A"])
+```
+
+## 10. Knowledge check
+
+Answer these questions *before* running code or consulting examples:
+
+1. How does `sys.argv[1:]` differ from `sys.argv`? How would you convert numeric arguments safely?
+2. Which is a better choice for a changeable collection: a list or a tuple? Why?
+3. What is tuple unpacking, and what happens when the number of values does not match the number of targets?
+4. How do union, intersection, and difference behave for sets? When would you use each?
+5. What is the difference between `mapping[key]` and `mapping.get(key, default)`?
+6. What does `yield` do, and why can a generator be useful for processing many values?
+7. When is a comprehension clearer than a `for` loop, and when is a normal loop preferable?
+
+## 11. Optional: reference programs
+
+<details>
+<summary>Show reference programs (open after independent practice)</summary>
+
+These are the author's reference implementations showing related Python features. **They are not solutions to the five challenges above.** Try the examples in this lesson first, then read one program and explain what each collection is doing. Some demonstrations produce random output.
+
+| Concept | Program |
+| :--- | :--- |
+| Command-line arguments and list iteration | [`ft_command_quest.py`](reference/ft_command_quest.py) |
+| Working with numeric lists | [`ft_score_analytics.py`](reference/ft_score_analytics.py) |
+| Tuples and distance calculations | [`ft_coordinate_system.py`](reference/ft_coordinate_system.py) |
+| Set operations | [`ft_achievement_tracker.py`](reference/ft_achievement_tracker.py) |
+| Dictionaries and summaries | [`ft_inventory_system.py`](reference/ft_inventory_system.py) |
+| Generators and streaming values | [`ft_data_stream.py`](reference/ft_data_stream.py) |
+| List and dictionary comprehensions | [`ft_data_alchemist.py`](reference/ft_data_alchemist.py) |
+
+From the repository root, you can run, for example:
+
+```bash
+python3 modules/03-data-structures/reference/ft_command_quest.py "Hello World" 42
+python3 modules/03-data-structures/reference/ft_score_analytics.py 12 24 36
+python3 modules/03-data-structures/reference/ft_inventory_system.py paper:3 pens:5
+```
+
+`ft_coordinate_system.py` asks for interactive input. `ft_data_stream.py` prints over 1,000 lines, so you may want to redirect its output to a local text file when exploring it. The set and comprehension demonstrations include random values, so their output will vary.
+
+</details>
+
+### Ready for the next chapter?
+
+You should be able to select a suitable collection, iterate over arguments, unpack a tuple, compare sets, use dictionaries to count values, write a readable comprehension, and explain how a generator resumes. If you can complete the practice challenges without copying a reference program, you have a useful foundation for building your own solutions.
 
 ---
 
