@@ -18,7 +18,7 @@ A good routine for each chapter is to **read → predict → run → modify → 
 | [01 — Object-Oriented Programming](../modules/01-oop/README.md) | How can objects represent state and behavior? | 00 | Ready |
 | [02 — Error Handling](../modules/02-error-handling/README.md) | How do I make failures predictable? | 00 | Ready |
 | [03 — Data Structures](../modules/03-data-structures/README.md) | Which collection should I use, and why? | 00 | Ready |
-| [04 — Files and I/O](../modules/04-files-io/README.md) | How should my program interact with files and streams? | 00 + 02 | Outline |
+| [04 — Files and I/O](../modules/04-files-io/README.md) | How should my program interact with files and streams? | 00 + 02 | In progress |
 | [05 — Advanced Object-Oriented Python](../modules/05-advanced-oop/README.md) | How can unrelated components share behavior? | 01 + 03 | Outline |
 | [06 — Modules and Packages](../modules/06-modules-packages/README.md) | How can I organize code across multiple files? | 00 + 04 | Outline |
 | [07 — Design Patterns](../modules/07-design-patterns/README.md) | How do I make designs flexible without overengineering? | 01 + 05 + 06 | Outline |
